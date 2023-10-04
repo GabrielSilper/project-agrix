@@ -9,15 +9,21 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Classe de configuração do Spring Security.
+ */
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
 
+  /**
+   * Uma bean necessária já que o Spring não cria um item do SecurityFilterChain.
+   */
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     return httpSecurity
         .csrf(AbstractHttpConfigurer::disable)
-        .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+        .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .build();
   }
 
