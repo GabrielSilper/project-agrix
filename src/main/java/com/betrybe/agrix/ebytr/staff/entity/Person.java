@@ -12,6 +12,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
@@ -106,7 +107,19 @@ public class Person implements UserDetails {
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return List.of();
+    SimpleGrantedAuthority authAdmin = new SimpleGrantedAuthority(Role.ADMIN.getName());
+    SimpleGrantedAuthority authManager = new SimpleGrantedAuthority(Role.MANAGER.getName());
+    SimpleGrantedAuthority authUser = new SimpleGrantedAuthority(Role.USER.getName());
+
+    if (this.role == Role.ADMIN) {
+      return List.of(authAdmin, authManager, authUser);
+    }
+
+    if (this.role == Role.MANAGER) {
+      return List.of(authManager, authUser);
+    }
+
+    return List.of(authUser);
   }
 }
 

@@ -1,6 +1,7 @@
 package com.betrybe.agrix.infra.security;
 
 
+import com.betrybe.agrix.ebytr.staff.security.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +42,9 @@ public class SecurityConfiguration {
         .authorizeHttpRequests(auth -> auth
             .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
             .requestMatchers(HttpMethod.POST, "/persons").permitAll()
+            .requestMatchers(HttpMethod.GET, "/farms").hasAuthority(Role.USER.getName())
+            .requestMatchers(HttpMethod.GET, "/crops").hasAuthority(Role.MANAGER.getName())
+            .requestMatchers(HttpMethod.GET, "/fertilizers").hasAuthority(Role.ADMIN.getName())
             .anyRequest().authenticated()
         )
         .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
