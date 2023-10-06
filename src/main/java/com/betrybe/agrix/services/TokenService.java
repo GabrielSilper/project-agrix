@@ -32,6 +32,18 @@ public class TokenService {
         .sign(algorithm);
   }
 
+  /**
+   * Método para verificar se um token é válido.
+   */
+  public String validateToken(String token) {
+    Algorithm algorithm = Algorithm.HMAC256(secret);
+    return JWT.require(algorithm)
+        .withIssuer("agrix")
+        .build()
+        .verify(token)
+        .getSubject();
+  }
+
   private Instant generateExpirationDate() {
     return LocalDateTime.now()
         .plusHours(2)
