@@ -1,10 +1,21 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Projeto Agrix
+
+Esta é uma API RESTful criada para o gerenciamento de fazendas e suas plantações. A aplicação é desenvolvida em Java com o uso do framework Spring Boot, Spring Security para autenticação e autorização, e JWT Token para segurança.
+
+## Funcionalidades Principais
+Registro e autenticação de usuários.
+Gerenciamento de fazendas - criação e visualização.
+Gerenciamento de plantações - criação, visualização e associação a fazendas.
+Controle de acesso baseado em permissões com o uso do Spring Security.
+
+## Tecnologias Utilizadas
+Java
+Spring Boot
+Spring Security
+JWT Token
+Banco de Dados MySQL
+Maven para gerenciamento de dependências
+
+### Endpoints
+
+Você pode encontrar o arquivo em JSON para todos os possíveis endpoints e importar no seu Postman Collections:
