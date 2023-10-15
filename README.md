@@ -19,3 +19,5 @@ Maven para gerenciamento de dependências
 ### Endpoints
 
 Você pode encontrar o arquivo em JSON para todos os possíveis endpoints e importar no seu Postman Collections:
+
+[Agrix Collection](agrix.postman_collection.json)

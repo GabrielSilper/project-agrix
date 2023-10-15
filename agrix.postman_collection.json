@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "f8953ba4-7142-4e05-84ee-7c5fb4788195",
+		"name": "agrix",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28828159"
+	},
+	"item": [
+		{
+			"name": "farms",
+			"item": [
+				{
+					"name": "{{baseUrlFarms}}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fazenda Dois Irmãos\",\n    \"size\": 50.7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlFarms}}",
+							"host": [
+								"{{baseUrlFarms}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlFarms}}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fazenda Dois Irmãos\",\n    \"size\": 50.7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlFarms}}",
+							"host": [
+								"{{baseUrlFarms}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlFarms}}/2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fazenda Dois Irmãos\",\n    \"size\": 50.7\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlFarms}}/2",
+							"host": [
+								"{{baseUrlFarms}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crops",
+			"item": [
+				{
+					"name": "{{baseUrlFarms}}/1/crops",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Couve-flor\",\n  \"plantedArea\": 5.43,\n  \"plantedDate\": \"2022-12-05\",\n  \"harvestDate\": \"2023-06-08\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlFarms}}/1/crops",
+							"host": [
+								"{{baseUrlFarms}}"
+							],
+							"path": [
+								"1",
+								"crops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlFarms}}/1/crops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlFarms}}/1/crops",
+							"host": [
+								"{{baseUrlFarms}}"
+							],
+							"path": [
+								"1",
+								"crops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlCrops}}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZ3JpeCIsInN1YiI6ImdhYnJpZWwiLCJleHAiOjE2OTY2MDEyMjl9.T3YRdiD4euOgKv28uWNBafWqEsiGcpPYQeTpskpETko",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrlCrops}}",
+							"host": [
+								"{{baseUrlCrops}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlCrops}}/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCrops}}/1",
+							"host": [
+								"{{baseUrlCrops}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlCrops}}/2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCrops}}/2",
+							"host": [
+								"{{baseUrlCrops}}"
+							],
+							"path": [
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlCrops}}/search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCrops}}/search?start=2023-01-07&end=2024-01-10",
+							"host": [
+								"{{baseUrlCrops}}"
+							],
+							"path": [
+								"search"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "2023-01-07"
+								},
+								{
+									"key": "end",
+									"value": "2024-01-10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "fertilizers",
+			"item": [
+				{
+					"name": "{{baseUrlFertilizers}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlFertilizers}}",
+							"host": [
+								"{{baseUrlFertilizers}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlFertilizers}}",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Adubo\",\n    \"brand\": \"Feito pelas vaquinhas\",\n    \"composition\": \"Esterco\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrlFertilizers}}",
+							"host": [
+								"{{baseUrlFertilizers}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlCrops}}/{cropId}/fertilizers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCrops}}/2/fertilizers",
+							"host": [
+								"{{baseUrlCrops}}"
+							],
+							"path": [
+								"2",
+								"fertilizers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrlCrops}}/2/fertilizers/2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrlCrops}}/2/fertilizers/2",
+							"host": [
+								"{{baseUrlCrops}}"
+							],
+							"path": [
+								"2",
+								"fertilizers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "persons",
+			"item": [
+				{
+					"name": "{{baseUrl}}/persons",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"gabriel\",\n  \"password\": \"12345678\",\n  \"role\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/persons",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"gabriel\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "{{baseUrl}}/auth/login wrong password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"gabriel\",\n  \"password\": \"asdad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
